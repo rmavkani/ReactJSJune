@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="ui container">
-      <h1>Welcome!</h1>
+      <h1>Welcome! to our Learnings</h1>
       <Header place="Chennai" />
       <Footer doctorName="Ramya Devi T" />
       <Contact phone="9742237223" />
