@@ -23,8 +23,8 @@ function App() {
 
   return (
     <div className="ui container">
-      <h1>Welcome! to our Learnings world </h1>
-      <Header place="Chennai" />
+      <h1>Welcome! to our Learnings world. </h1>
+      <Header place="Chennai-92" />
       <Footer doctorName="Ramya Devi T" />
       <Contact phone="9742237223" />
       <UserForm addUserDetails={addUserDetails} />
