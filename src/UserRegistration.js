@@ -14,7 +14,7 @@ class UserRegistration extends React.Component {
   };
   render() {
     return (
-      <div className="ui main">
+      <div className="ui main segment">
         <h2>User Registration </h2>
         <form className="ui form" onSubmit={this.addUser}>
           <div className="field">

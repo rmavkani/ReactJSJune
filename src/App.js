@@ -8,6 +8,7 @@ import { uuid } from "uuidv4";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./App.css";
+import About from "./About";
 
 function App() {
   const LOCAL_STORAGE_KEY = "users";
@@ -34,15 +35,19 @@ function App() {
   return (
     <div>
       <Header place="Chennai-92" />
-      <div className="ui container center">
+      <div className="ui container segment center">
         <Router>
           <Link to="/">
             <button className="ui button blue right">Home</button>
+          </Link>
+          <Link to="/aboutus">
+            <button className="ui button blue right">About Us</button>
           </Link>
           <Link to="/userList">
             <button className="ui button blue right">Admin</button>
           </Link>
           <Switch>
+            <Route path="/aboutus" exact component={About} />
             <Route
               path="/userReg"
               exact

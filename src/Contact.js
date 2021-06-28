@@ -9,14 +9,15 @@ function Contact(props) {
   ];
   const work = worklocation.map((wl) => {
     return (
-      <div>
+      <div className="ui">
         {wl.hours} / {wl.location}{" "}
       </div>
     );
   });
 
   return (
-    <div>
+    <div className="ui bottom segment vertical">
+      Working hours:
       {work}
       For Appoinments: {props.phone}
     </div>
