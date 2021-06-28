@@ -32,36 +32,36 @@ function App() {
   }, [users]);
 
   return (
-    <div className="ui container">
-      <h1>Welcome!</h1>
-      <Router>
-        <Header place="Chennai-92" />
-        <Link to="/">
-          <button className="ui button blue right">Home</button>
-        </Link>
-        <Link to="/userList">
-          <button className="ui button blue right">Admin</button>
-        </Link>
-        <Switch>
-          <Route
-            path="/userReg"
-            exact
-            render={(props) => (
-              <UserRegistration {...props} addUserHandler={addUserHandler} />
-            )}
-          />
-          <Route
-            path="/userList"
-            exact
-            render={(props) => (
-              <UserList
-                {...props}
-                users={users}
-                getUserId={deleteUserHandler}
-              />
-            )}
-          />
-          {/* <Route
+    <div>
+      <Header place="Chennai-92" />
+      <div className="ui container center">
+        <Router>
+          <Link to="/">
+            <button className="ui button blue right">Home</button>
+          </Link>
+          <Link to="/userList">
+            <button className="ui button blue right">Admin</button>
+          </Link>
+          <Switch>
+            <Route
+              path="/userReg"
+              exact
+              render={(props) => (
+                <UserRegistration {...props} addUserHandler={addUserHandler} />
+              )}
+            />
+            <Route
+              path="/userList"
+              exact
+              render={(props) => (
+                <UserList
+                  {...props}
+                  users={users}
+                  getUserId={deleteUserHandler}
+                />
+              )}
+            />
+            {/* <Route
             path="/userReg"
             exact
             component={() => (
@@ -75,11 +75,12 @@ function App() {
               <UserList users={users} getUserId={deleteUserHandler} />
             )}
           />*/}
-        </Switch>
+          </Switch>
 
-        <Contact phone="9742237223" />
-        <Footer website="https://seyon-homoeo-clinic.business.site/" />
-      </Router>
+          <Contact phone="9742237223" />
+          <Footer website="https://seyon-homoeo-clinic.business.site/" />
+        </Router>
+      </div>
     </div>
   );
 }
