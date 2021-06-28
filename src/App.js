@@ -39,7 +39,7 @@ function App() {
           <button className="ui button blue right">Home</button>
         </Link>
         <Link to="/userList">
-          <button className="ui button blue right">User Module</button>
+          <button className="ui button blue right">Admin</button>
         </Link>
         <Switch>
           <Route
