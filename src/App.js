@@ -7,6 +7,7 @@ import UserList from "./UserList";
 import { uuid } from "uuidv4";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./App.css";
 
 function App() {
   const LOCAL_STORAGE_KEY = "users";
