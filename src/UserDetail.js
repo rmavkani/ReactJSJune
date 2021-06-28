@@ -1,10 +1,19 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 const UserDetail = (props) => {
   const { id, name, mail } = props.user;
   return (
-    <div>
-      {name} and {mail}
+    <div className="item">
+      <div className="content">
+        <div className="header"> Name: {name} </div>
+        <div> Mail Id: {mail} </div>
+      </div>
+      <i
+        className="trash alternate outline icon"
+        style={{ color: "Red", marginTop: "7px" }}
+        onClick={() => props.clickHandler(id)}
+      ></i>
     </div>
   );
 };

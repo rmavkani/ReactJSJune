@@ -2,13 +2,12 @@ import React from "react";
 
 function Contact(props) {
   const worklocation = [
-    { hours: "Morning", location: "Kandarn" },
-    { hours: "Evening", location: "Seyon" }
+    { hours: "Evening: 4.30pm - 7.30pm", location: " Clinic & Online" }
   ];
   const work = worklocation.map((wl) => {
     return (
       <div>
-        {wl.hours} :{wl.location}{" "}
+        {wl.hours} / {wl.location}{" "}
       </div>
     );
   });

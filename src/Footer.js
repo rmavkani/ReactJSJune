@@ -5,7 +5,7 @@ class Footer extends React.Component {
     return (
       <div>
         {" "}
-        <h6>Thank you, {this.props.doctorName} </h6>{" "}
+        <h6>Thank you, {this.props.website} </h6>{" "}
       </div>
     );
   }

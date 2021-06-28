@@ -1,6 +1,6 @@
 import React from "react";
 
-class UserForm extends React.Component {
+class UserRegistration extends React.Component {
   state = { name: "", mail: "" };
   addUser = (e) => {
     e.preventDefault();
@@ -8,13 +8,13 @@ class UserForm extends React.Component {
       alert("mandatory fields");
       return;
     }
-    this.props.addUserDetails(this.state);
+    this.props.addUserHandler(this.state);
     this.setState({ name: "", mail: "" });
   };
   render() {
     return (
       <div className="ui main">
-        <h2> Add Users </h2>
+        <h2>User Registration </h2>
         <form className="ui form" onSubmit={this.addUser}>
           <div className="field">
             <label>User Name </label>
@@ -23,16 +23,16 @@ class UserForm extends React.Component {
               name="user name"
               onChange={(e) => this.setState({ name: e.target.value })}
               value={this.state.name}
-              placeholder="User Name"
+              placeholder="Enter your User Name"
             />
           </div>
           <div className="field">
-            <label>MailId </label>
+            <label>Mail Id </label>
             <input
               type="text"
               name="mail"
               onChange={(e) => this.setState({ mail: e.target.value })}
-              placeholder="Mail Id"
+              placeholder="Enter your Mail Id"
               value={this.state.mail}
             />
           </div>
@@ -42,4 +42,4 @@ class UserForm extends React.Component {
     );
   }
 }
-export default UserForm;
+export default UserRegistration;

@@ -2,17 +2,25 @@ import React, { useState, useEffect } from "react";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Header from "./Header";
-import UserForm from "./UserForm";
-import UserDetailsList from "./UserDetailsList";
+import UserRegistration from "./UserRegistration";
+import UserList from "./UserList";
 import { uuid } from "uuidv4";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const LOCAL_STORAGE_KEY = "users";
   const [users, setUsers] = useState([]);
-  const addUserDetails = (user) => {
+
+  const addUserHandler = (user) => {
     setUsers([...users, { id: uuid(), ...user }]);
   };
 
+  const deleteUserHandler = (id) => {
+    const newUserlist = users.filter((user) => {
+      return user.id !== id;
+    });
+    setUsers(newUserlist);
+  };
   useEffect(() => {
     const retrieveUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     setUsers(retrieveUser);
@@ -23,12 +31,15 @@ function App() {
 
   return (
     <div className="ui container">
-      <h1>Welcome! to our Learnings world. </h1>
-      <Header place="Chennai-92" />
-      <Footer doctorName="Ramya Devi T" />
-      <Contact phone="9742237223" />
-      <UserForm addUserDetails={addUserDetails} />
-      <UserDetailsList users={users} />
+      <h1>Welcome!</h1>
+      <Router>
+        <Header place="Chennai-92" />
+
+        <UserRegistration addUserHandler={addUserHandler} />
+        <UserList users={users} getUserId={deleteUserHandler} />
+        <Contact phone="9742237223" />
+        <Footer website="https://seyon-homoeo-clinic.business.site/" />
+      </Router>
     </div>
   );
 }
