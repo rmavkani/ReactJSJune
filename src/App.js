@@ -6,6 +6,7 @@ import UserRegistration from "./UserRegistration";
 import UserList from "./UserList";
 import { uuid } from "uuidv4";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function App() {
   const LOCAL_STORAGE_KEY = "users";
@@ -34,9 +35,47 @@ function App() {
       <h1>Welcome!</h1>
       <Router>
         <Header place="Chennai-92" />
+        <Link to="/">
+          <button className="ui button blue right">Home</button>
+        </Link>
+        <Link to="/userList">
+          <button className="ui button blue right">User Module</button>
+        </Link>
+        <Switch>
+          <Route
+            path="/userReg"
+            exact
+            render={(props) => (
+              <UserRegistration {...props} addUserHandler={addUserHandler} />
+            )}
+          />
+          <Route
+            path="/userList"
+            exact
+            render={(props) => (
+              <UserList
+                {...props}
+                users={users}
+                getUserId={deleteUserHandler}
+              />
+            )}
+          />
+          {/* <Route
+            path="/userReg"
+            exact
+            component={() => (
+              <UserRegistration addUserHandler={addUserHandler} />
+            )}
+          />
+          <Route
+            path="/userList"
+            exact
+            component={() => (
+              <UserList users={users} getUserId={deleteUserHandler} />
+            )}
+          />*/}
+        </Switch>
 
-        <UserRegistration addUserHandler={addUserHandler} />
-        <UserList users={users} getUserId={deleteUserHandler} />
         <Contact phone="9742237223" />
         <Footer website="https://seyon-homoeo-clinic.business.site/" />
       </Router>

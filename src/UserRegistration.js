@@ -5,11 +5,12 @@ class UserRegistration extends React.Component {
   addUser = (e) => {
     e.preventDefault();
     if (this.state.name === "" || this.state.mail === "") {
-      alert("mandatory fields");
+      alert("Enter all mandatory fields!");
       return;
     }
     this.props.addUserHandler(this.state);
     this.setState({ name: "", mail: "" });
+    this.props.history.push("/");
   };
   render() {
     return (
