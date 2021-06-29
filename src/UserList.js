@@ -13,6 +13,7 @@ const UserList = (props) => {
       <UserDetail user={user} clickHandler={deleteUserHandler} key={user.id} />
     );
   });
+
   return (
     <div className="main">
       <h3> Registered Users</h3>
